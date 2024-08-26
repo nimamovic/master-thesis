@@ -10,7 +10,7 @@ const tableName = 'Items';
 
 module.exports.getItems = async () => {
   const params = {
-    TableName
+    TableName: tableName
   };
 
   try {
@@ -30,7 +30,7 @@ module.exports.getItems = async () => {
 module.exports.getItem = async (event) => {
   const { id } = event.pathParameters;
   const params = {
-    TableName,
+    TableName: tableName,
     Key: { id }
   };
 
@@ -57,7 +57,7 @@ module.exports.getItem = async (event) => {
 module.exports.createItem = async (event) => {
   const data = JSON.parse(event.body);
   const params = {
-    TableName,
+    TableName: tableName,
     Item: {
       id: uuidv4(),
       name: data.name
