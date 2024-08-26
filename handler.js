@@ -10,7 +10,7 @@ const tableName = 'Items';
 
 module.exports.getItems = async () => {
   const params = {
-    TableName
+    TableName: tableName
   };
 
   try {
@@ -22,7 +22,7 @@ module.exports.getItems = async () => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'hello while fatching items', details: err })
+      body: JSON.stringify({ error: 'Error while fatching items', details: err })
     };
   }
 };
@@ -30,7 +30,7 @@ module.exports.getItems = async () => {
 module.exports.getItem = async (event) => {
   const { id } = event.pathParameters;
   const params = {
-    TableName,
+    TableName: tableName,
     Key: { id }
   };
 
@@ -49,7 +49,7 @@ module.exports.getItem = async (event) => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'hello while fatching item with id: ' + id, details: err })
+      body: JSON.stringify({ error: 'Error while fatching item with id: ' + id, details: err })
     };
   }
 };
@@ -57,7 +57,7 @@ module.exports.getItem = async (event) => {
 module.exports.createItem = async (event) => {
   const data = JSON.parse(event.body);
   const params = {
-    TableName,
+    TableName: tableName,
     Item: {
       id: uuidv4(),
       name: data.name
@@ -73,7 +73,7 @@ module.exports.createItem = async (event) => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'hello while creating item.', details: err })
+      body: JSON.stringify({ error: 'Error while creating item.', details: err })
     };
   }
 };
