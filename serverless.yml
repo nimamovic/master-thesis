@@ -1,0 +1,28 @@
+service: master-thesis
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: eu-north-1
+  environment:
+    DYNAMODB_TABLE: Items
+
+functions:
+  createItem:
+    handler: handler.createItem
+    events:
+      - http:
+          path: items
+          method: post
+  getItems:
+    handler: handler.getItems
+    events:
+      - http:
+          path: items
+          method: get
+  getItem:
+    handler: handler.getItem
+    events:
+      - http:
+          path: items/{id}
+          method: get
