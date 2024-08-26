@@ -1,0 +1,24 @@
+{
+  "name": "master-thesis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimamovic/master-thesis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nimamovic/master-thesis/issues"
+  },
+  "homepage": "https://github.com/nimamovic/master-thesis#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1683.0",
+    "uuid": "^10.0.0"
+  }
+}
