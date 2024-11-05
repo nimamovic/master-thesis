@@ -13,6 +13,8 @@ module.exports.getItems = async () => {
     TableName: tableName
   };
 
+  const nasa = "nasa";
+
   try {
     const data = await dynamoDBdocumentClient.scan(params).promise();
     return {
@@ -22,7 +24,7 @@ module.exports.getItems = async () => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error hello fatching items', details: err })
+      body: JSON.stringify({ error: 'Error while fatching items', details: err })
     };
   }
 };
@@ -49,7 +51,7 @@ module.exports.getItem = async (event) => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error hello fatching item with id: ' + id, details: err })
+      body: JSON.stringify({ error: 'Error while fatching item with id: ' + id, details: err })
     };
   }
 };
@@ -73,7 +75,7 @@ module.exports.createItem = async (event) => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error hello creating item.', details: err })
+      body: JSON.stringify({ error: 'Error while creating item.', details: err })
     };
   }
 };
