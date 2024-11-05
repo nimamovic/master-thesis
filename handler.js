@@ -13,6 +13,8 @@ module.exports.getItems = async () => {
     TableName: tableName
   };
 
+  const nasa = "nasa";
+
   try {
     const data = await dynamoDBdocumentClient.scan(params).promise();
     return {
