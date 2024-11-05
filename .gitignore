@@ -131,3 +131,5 @@ dist
 
 # Serverless directories
 .serverless
+
+.idea

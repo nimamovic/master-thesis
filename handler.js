@@ -22,7 +22,7 @@ module.exports.getItems = async () => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error hello fatching items', details: err })
+      body: JSON.stringify({ error: 'hello hello fatching items', details: err })
     };
   }
 };
@@ -49,7 +49,7 @@ module.exports.getItem = async (event) => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error hello fatching item with id: ' + id, details: err })
+      body: JSON.stringify({ error: 'hello hello fatching item with id: ' + id, details: err })
     };
   }
 };
@@ -64,6 +64,8 @@ module.exports.createItem = async (event) => {
     }
   };
 
+  console.log("hello");
+  const hello = "hello";
   try {
     await dynamoDBdocumentClient.put(params).promise();
     return {
@@ -73,7 +75,7 @@ module.exports.createItem = async (event) => {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error hello creating item.', details: err })
+      body: JSON.stringify({ error: 'hello hello creating item.', details: err })
     };
   }
 };
